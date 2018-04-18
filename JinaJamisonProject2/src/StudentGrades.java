@@ -5,7 +5,7 @@
  */
 
 /**
- *
+ *  Spring 2018 Java 1: project 2
  * @author jmjamison
  */
 public class StudentGrades {
