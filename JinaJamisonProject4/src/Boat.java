@@ -10,47 +10,50 @@
  */
 public class Boat {
     
-    // fields
-    private String name:
+    /** protected private fields */
+    private String name;
     private Boolean  sail;
     private float speed;
     
-    //  constructor
+     /** constructor, initializes the object kind of like c++?  */
     Boat(String name)
     {
         this.name = name;
         speed = 0;
-        sail = True;
+        sail = true;
     }
     
-    //methods
+    /** methods */
     public void goFast()
     {
         // code here
+        System.out.println("go fast\n");
     }
     
     public void goSlow()
     {
         // code here
+        System.out.println("go slow\n");
     }   
 
     public void whereIsTheSail()
     {
         // code here
+        System.out.println("Sail is up or down.");
     }
     
-    // constructor
-    public setName(String name)
+    /**  the public interface to the protected fields */
+    public void setName(String name)
     {
         this.name = name;
     }
     
-    public setSail(boolean sail)
+    public void setSail(boolean sail)
     {
         this.sail = sail;
     }
     
-    public setSpeed(float speed)
+    public void setSpeed(float speed)
     {
         this.speed = speed;
     }
