@@ -27,19 +27,28 @@ public class Boat {
     public void goFast()
     {
         // code here
-        System.out.println("go fast\n");
+        sail = true;
+        speed = speed + 10;
+        System.out.println(name + " is raising the sail at the speed of " + Math.round(speed) + " mph.\n");
     }
     
     public void goSlow()
     {
         // code here
-        System.out.println("go slow\n");
+        sail = false;
+        speed = speed - 5;
+        System.out.println(name + " is lowering the sail at the speed of " + Math.round(speed) + " mph.\n");
     }   
 
+    /** sail is true/up
+        sail is false/down */
     public void whereIsTheSail()
     {
         // code here
-        System.out.println("Sail is up or down.");
+        if(sail)  // sail is ture/up
+            System.out.println(name + " sail is up.\n");
+        else   // sale is false/down
+            System.out.println(name + " sail is down.\n");
     }
     
     /**  the public interface to the protected fields */
