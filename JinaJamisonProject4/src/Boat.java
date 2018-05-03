@@ -29,6 +29,13 @@ public class Boat {
         // code here
         sail = true;
         speed = speed + 10;
+        
+        // boat speed should not exceed 100
+        if (speed > 100)
+        {
+            speed = 100;
+
+        }
         System.out.println(name + " is raising the sail at the speed of " + Math.round(speed) + " mph.\n");
     }
     
