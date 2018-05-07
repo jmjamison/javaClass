@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="project5_uml">
+  <ClassDiagramComponents>
+    <Class name="BankAccount" package="" visibility="public" xPosition="412.0" yPosition="50.0">
+      <Fields>
+        <Field name="customer" type="Object" visibility="private"/>
+        <Field name="AccountNumber" type="Object" visibility="private"/>
+        <Field name="Balance" type="Object" visibility="private"/>
+        <Field name="interest" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="deposit" returnType="void" visibility="public"/>
+        <Method name="withdraw" returnType="void" visibility="public"/>
+        <Method name="applyInterest" returnType="void" visibility="public"/>
+        <Method name="checkBlanace" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Customer" package="" visibility="public" xPosition="67.0" yPosition="67.0">
+      <Fields>
+        <Field name="fname" type="Object" visibility="private"/>
+        <Field name="lname" type="Object" visibility="private"/>
+        <Field name="SSN" type="Object" visibility="private"/>
+        <Field name="interest" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
