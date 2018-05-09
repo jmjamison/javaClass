@@ -1,2 +1,13 @@
+.gitignore
+/week*
+*.zip
+/JinaJamisonProject1x
+/JinaJamisonProject2x
+/JinaJamisonProject2/dist/
 /JinaJamisonProject4/nbproject/private/
 /JinaJamisonProject4/build/
+/JinaJamisonProject4/nbproject/private/
+/JinaJamisonProject4/build/
+
+/JinaJamisonProject5/nbproject/private/
+/JinaJamisonProject5/build/
