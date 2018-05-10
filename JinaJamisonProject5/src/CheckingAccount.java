@@ -13,16 +13,26 @@
  */
 public class CheckingAccount extends BankAccount {
     
-    public void createCustomer(String fname, String lname, String ssNumber) 
-    {
-        //
-    }
+    public String fname;
+    public String lname;
+    public String ssNumber;
+    public float balance;
+    public String customer;
+    public String accountNumber;
     
+         
     /**  constructor    */
-    public CheckingAccount(String fname, String lname, String accountNumber, float balance)
+    CheckingAccount(String customer, String accountNumber, float balance)
     {
-        //
         
+        this.fname = fname;
+        this.lname = lname;
+        this.ssNumber = ssNumber;
+        this.balance = balance;
+        
+        this.customer = fname + " " + lname;
+        
+        Customer customer1 = new Customer(fname, lname, ssNumber);
     }
     
     
