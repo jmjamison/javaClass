@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.util.Random;
 /**
  *
  * @author jmjamison
@@ -13,6 +13,7 @@ public class BankAccount {
     private String customer;
     private String accountNumber;
     private float balance;
+    private float depositAmount;
     
     /** constructor  */
     BankAccount (String customer, String accountNumber, float balance)
@@ -20,13 +21,19 @@ public class BankAccount {
         this.customer = customer;
         this.accountNumber = accountNumber;
         this.balance = balance;
+        this.depositAmount = depositAmount;
         
     }
     
-    public void deposit()
+    public void deposit(float depositAmount)
     {
-        System.out.println("deposit method");
-    }
+        this.customer = customer;
+        this.depositAmount = depositAmount;
+        this.balance = balance + depositAmount; 
+        
+        System.out.println(this.customer + " deposited " + depositAmount + ".  Current balance is " + balance);
+               
+    } 
     
     public void withdraw()
     {
@@ -38,9 +45,10 @@ public class BankAccount {
         System.out.println("apply interest method");
     }
     
-    public void checkBalance()
+    public void checkBalance(String customer)            
     {
-        System.out.println("check bank balance method");
+        this.customer = customer;
+        System.out.println(this.customer + ", Balance " + balance);
     }
     
     public void setCustomer()
@@ -49,10 +57,12 @@ public class BankAccount {
         System.out.println(customer);
     }
     
-    public void setAccountNumber()
+    public String setAccountNumber()
     {
-        //
-        System.out.println(accountNumber);
+        
+        accountNumber = "1234567898";
+        //System.out.println(accountNumber);
+        return(accountNumber);
     }
     
     public void setBalance()

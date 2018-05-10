@@ -1,7 +1,4 @@
-/**
- *
- * @author jmjamison
- *//*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -11,13 +8,13 @@
  *
  * @author jmjamison
  */
-public class CheckingAccount extends BankAccount {
+public class SavingAccount extends BankAccount {
     
+     /**  constructor    */
     public String fname;
     public String lname;
     public String ssNumber;
     public float balance;
-    public float depositAmount;
     public Customer customer;
     public String customerName;
     public String accountNumber;
@@ -36,6 +33,7 @@ public class CheckingAccount extends BankAccount {
         this.balance = balance;
         this.accountNumber = accountNumber;
        
+        
         Customer customerNew = new Customer(fname, lname, ssNumber);
         customerNew.setFname(fname);
         customerNew.setLname(lname);
@@ -50,7 +48,7 @@ public class CheckingAccount extends BankAccount {
     
     
     /**  constructor    */
-    CheckingAccount(String fname, String lname, String ssNumber, float balance)
+    SavingAccount(String fname, String lname, String ssNumber, float balance)
     {    
         // Call super class Constructor with proper args
         super(fname + " " + lname,ssNumber,balance);
@@ -61,10 +59,9 @@ public class CheckingAccount extends BankAccount {
         this.balance = balance;
         this.customerName = fname + " " + lname;
         
+        
         //System.out.println(customerName + ", Balance " + balance);
         super.checkBalance(customerName);
-       
-        
             
     }
     
