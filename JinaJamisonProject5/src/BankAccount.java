@@ -50,9 +50,18 @@ public class BankAccount {
         //this.customer = customer;
         //this.balance = balance;
         //this.withdrawAmount = withdrawAmount;
-        balance -= amount; 
         
-        System.out.println(customerName + "  withdrew $" + amount + ".  Current balance is $" + balance);
+        if (amount < balance)
+        {
+            balance -= amount; 
+             System.out.println(customerName + "  withdrew $" + amount + ".  Current balance is $" + balance);
+        }
+        else
+        {
+            System.out.println("Unable to withdraw $" + amount + " for "  + customerName + " due to Insufficient Funds.");
+        }
+        
+       
         //return(this.balance);
     }
     

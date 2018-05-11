@@ -1,3 +1,7 @@
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,24 +24,36 @@ public class Customer {
     {
         this.fname = fname;
         this.lname = lname;
-        this.ssNumber = ssNumber;
-    }
         
-    public void setFname(String fname)
-    {
-        this.fname = fname;
+        testSSN(ssNumber);
+        //this.ssNumber = ssNumber;
     }
     
-    public void setLname(String lname)
-    {
-        this.lname = lname;
-        
-    }
-    
-    public void setSSN(String ssNumber) 
+    public void testSSN(String ssNumber) 
     {
         this.ssNumber = ssNumber;
+        //this.ssNumber = ssNumber;  [0-9]{3}-[0-9]{2}-[0-9]{4}
+        //Pattern ssnPattern = Pattern.compile("/^[0-9]{3}-[0-9]{2}-[0-9]{4}$/");
+        //Matcher matcher = ssnPattern.matcher(ssNumber);
+        final String regex = "^[0-9]{3}-[0-9]{2}-[0-9]{4}$";
+        final String string = ssNumber;
+
+        final Pattern pattern = Pattern.compile(regex);
+        final Matcher matcher = pattern.matcher(string);
+        if (matcher.find())
+        {
+            this.ssNumber = ssNumber;            
+            //System.out.println("Social Security number is ok"); // debugging code
+        }
+        else
+        {
+            this.ssNumber = "Invalid_SSN";
+            System.out.println("Successfully created account for " + fname + " " + lname + " . Invalid SSN!");
+
+            
+        }
     }
+
     
     
 }
