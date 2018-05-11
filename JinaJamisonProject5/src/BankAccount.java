@@ -3,51 +3,57 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import java.util.Random;
 /**
  *
  * @author jmjamison
  */
 public class BankAccount {
     /**  protected private fields   */
-    private String customer;
-    private String accountNumber;
-    private float balance;
-    private float depositAmount;
-    private float withdrawAmount;
+    //private String customer;
+    private Customer customer;
+    private String customerName;
+    private long accountNumber;
+    protected float balance;
+    //private float depositAmount;
+    //private float withdrawAmount;
+    
+        
     
     /** constructor  */
-    BankAccount (String customer, String accountNumber, float balance)
+    public BankAccount (String fname, String lname, String ssNumber, float amount)
     {
-        this.customer = customer;
-        this.accountNumber = accountNumber;
-        this.balance = balance;
-        this.depositAmount = depositAmount;
-        this.withdrawAmount = withdrawAmount;
+        //this.customer = customer;
+        customer = new Customer(fname, lname, ssNumber);
+        customerName = fname + " " + lname;
+        accountNumber = (long)(Math.random() * 9e9 + 1e9);
+        balance = amount;
+        //this.depositAmount = depositAmount;
+        //this.withdrawAmount = withdrawAmount;
+        System.out.println("Successfully created account for " + fname + " " + lname + " Account Number " + accountNumber);
         
     }
     
-    public float deposit(float depositAmount)
+    public void deposit(float amount)
     {
-        this.customer = customer;
-        this.balance = balance;
-        this.depositAmount = depositAmount;
-        this.balance = this.balance + depositAmount; 
+        //this.customer = customer;
+        //this.balance = balance;
+        //this.depositAmount = depositAmount;
+        balance += amount; 
         
-        System.out.println(this.customer + " deposited " + depositAmount + ".  Current balance is " + this.balance);
-        return(this.balance);
+        System.out.println(customerName + " deposited $" + amount + ".  Current balance is $" + balance);
+        //return(balance);
                
     } 
     
-    public float withdraw(float withdrawAmount)
+    public void withdraw(float amount)
     {
-        this.customer = customer;
-        this.balance = balance;
-        this.withdrawAmount = withdrawAmount;
-        this.balance = this.balance - depositAmount; 
+        //this.customer = customer;
+        //this.balance = balance;
+        //this.withdrawAmount = withdrawAmount;
+        balance -= amount; 
         
-        System.out.println(this.customer + "  withdrew " + withdrawAmount + ".  Current balance is " + this.balance);
-        return(this.balance);
+        System.out.println(customerName + "  withdrew $" + amount + ".  Current balance is $" + balance);
+        //return(this.balance);
     }
     
     public void applyInterest()
@@ -57,18 +63,9 @@ public class BankAccount {
     
     public void checkBalance()            
     {
-        this.customer = customer;
-        this.balance = balance;
-        System.out.println(this.customer + ", Balance " + this.balance);
+        //this.customer = customer;
+        //this.balance = balance;
+        System.out.println(customerName + ", Balance " + balance);
     }
-    
-    public String setAccountNumber()
-    {
-        
-        accountNumber = "1234567898";
-        //System.out.println(accountNumber);
-        return(accountNumber);
-    }
-    
         
 }

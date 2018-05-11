@@ -13,53 +13,13 @@
  */
 public class CheckingAccount extends BankAccount {
     
-    public String fname;
-    public String lname;
-    public String ssNumber;
-    public float balance;
-    public float depositAmount;
-    public Customer customer;
-    public String customerName;
-    public String accountNumber;
+    //private float interestRate;
     
-     public Customer createCustomer(String fname, String lname, String ssNumber)
-    {
-        this.fname = fname;
-        this.lname = lname;
-        this.ssNumber = ssNumber;
-        this.balance = balance;
-        this.accountNumber = accountNumber;
-       
-        Customer customerNew = new Customer(fname, lname, ssNumber);
-        customerNew.setFname(fname);
-        customerNew.setLname(lname);
-        customerNew.setSSN(ssNumber);
-        
-        this.accountNumber = this.setAccountNumber();
-        
-        System.out.println("Successfully created account for " + fname + " " + lname + " Account Number " + accountNumber);
-        return(customerNew);
-    }
-    
-    
-    
-    /**  constructor to create bank customer   */
-    CheckingAccount(String fname, String lname, String ssNumber, float balance)
+    /**  constructor    */
+    public CheckingAccount(String fname, String lname, String ssNumber, float amount)
     {    
-        // Call super class Constructor with proper args
-        super(fname + " " + lname,ssNumber,balance);
+        super(fname, lname, ssNumber, amount);
         
-        // Create customer object
-        this.customer = this.createCustomer(fname, lname, ssNumber);
-        this.ssNumber = ssNumber;
-        this.balance = balance;
-        this.customerName = fname + " " + lname;
-        
-        //System.out.println(customerName + ", Balance " + balance);
-        super.checkBalance();
-       
-        
-            
     }
     
     

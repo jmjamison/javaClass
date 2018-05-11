@@ -16,7 +16,7 @@ public class Customer {
     private String ssNumber;
     
     /** constructor     */
-    Customer(String fname, String lname, String ssNumber)
+    public Customer(String fname, String lname, String ssNumber)
     {
         this.fname = fname;
         this.lname = lname;
