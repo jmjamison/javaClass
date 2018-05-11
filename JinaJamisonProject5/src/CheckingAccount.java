@@ -22,13 +22,7 @@ public class CheckingAccount extends BankAccount {
     public String customerName;
     public String accountNumber;
     
-    public void setCustomer (String fname, String lname)
-    {
-        //this.customer = fname + " " + lname;
-        //System.out.println("new customer: " + fname + " " + lname);
-    }
-        
-    public Customer createCustomer(String fname, String lname, String ssNumber)
+     public Customer createCustomer(String fname, String lname, String ssNumber)
     {
         this.fname = fname;
         this.lname = lname;
@@ -49,7 +43,7 @@ public class CheckingAccount extends BankAccount {
     
     
     
-    /**  constructor    */
+    /**  constructor to create bank customer   */
     CheckingAccount(String fname, String lname, String ssNumber, float balance)
     {    
         // Call super class Constructor with proper args
@@ -62,7 +56,7 @@ public class CheckingAccount extends BankAccount {
         this.customerName = fname + " " + lname;
         
         //System.out.println(customerName + ", Balance " + balance);
-        super.checkBalance(customerName);
+        super.checkBalance();
        
         
             

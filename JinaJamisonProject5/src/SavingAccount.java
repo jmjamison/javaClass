@@ -61,7 +61,7 @@ public class SavingAccount extends BankAccount {
         
         
         //System.out.println(customerName + ", Balance " + balance);
-        super.checkBalance(customerName);
+        super.checkBalance();
             
     }
     

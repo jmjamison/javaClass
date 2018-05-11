@@ -14,6 +14,7 @@ public class BankAccount {
     private String accountNumber;
     private float balance;
     private float depositAmount;
+    private float withdrawAmount;
     
     /** constructor  */
     BankAccount (String customer, String accountNumber, float balance)
@@ -22,22 +23,31 @@ public class BankAccount {
         this.accountNumber = accountNumber;
         this.balance = balance;
         this.depositAmount = depositAmount;
+        this.withdrawAmount = withdrawAmount;
         
     }
     
-    public void deposit(float depositAmount)
+    public float deposit(float depositAmount)
     {
         this.customer = customer;
+        this.balance = balance;
         this.depositAmount = depositAmount;
-        this.balance = balance + depositAmount; 
+        this.balance = this.balance + depositAmount; 
         
-        System.out.println(this.customer + " deposited " + depositAmount + ".  Current balance is " + balance);
+        System.out.println(this.customer + " deposited " + depositAmount + ".  Current balance is " + this.balance);
+        return(this.balance);
                
     } 
     
-    public void withdraw()
+    public float withdraw(float withdrawAmount)
     {
-        System.out.println("withdraw method");
+        this.customer = customer;
+        this.balance = balance;
+        this.withdrawAmount = withdrawAmount;
+        this.balance = this.balance - depositAmount; 
+        
+        System.out.println(this.customer + "  withdrew " + withdrawAmount + ".  Current balance is " + this.balance);
+        return(this.balance);
     }
     
     public void applyInterest()
@@ -45,16 +55,11 @@ public class BankAccount {
         System.out.println("apply interest method");
     }
     
-    public void checkBalance(String customer)            
+    public void checkBalance()            
     {
         this.customer = customer;
-        System.out.println(this.customer + ", Balance " + balance);
-    }
-    
-    public void setCustomer()
-    {
-        //
-        System.out.println(customer);
+        this.balance = balance;
+        System.out.println(this.customer + ", Balance " + this.balance);
     }
     
     public String setAccountNumber()
@@ -65,10 +70,5 @@ public class BankAccount {
         return(accountNumber);
     }
     
-    public void setBalance()
-    {
-        //
-        System.out.println(balance);
-    }
-    
+        
 }
