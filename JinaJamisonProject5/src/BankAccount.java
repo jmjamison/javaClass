@@ -9,48 +9,37 @@
  */
 public class BankAccount {
     /**  protected private fields   */
-    //private String customer;
     private Customer customer;
     private String customerName;
     private long accountNumber;
     protected float balance;
-    //private float depositAmount;
-    //private float withdrawAmount;
-    
+        
         
     
     /** constructor  */
     public BankAccount (String fname, String lname, String ssNumber, float amount)
     {
-        //this.customer = customer;
         customer = new Customer(fname, lname, ssNumber);
         customerName = fname + " " + lname;
         accountNumber = (long)(Math.random() * 9e9 + 1e9);
         balance = amount;
-        //this.depositAmount = depositAmount;
-        //this.withdrawAmount = withdrawAmount;
         System.out.println("Successfully created account for " + fname + " " + lname + " Account Number " + accountNumber);
+        checkBalance();
         
     }
     
     public void deposit(float amount)
     {
-        //this.customer = customer;
-        //this.balance = balance;
-        //this.depositAmount = depositAmount;
         balance += amount; 
         
         System.out.println(customerName + " deposited $" + amount + ".  Current balance is $" + balance);
-        //return(balance);
+       
                
     } 
     
     public void withdraw(float amount)
     {
-        //this.customer = customer;
-        //this.balance = balance;
-        //this.withdrawAmount = withdrawAmount;
-        
+              
         if (amount < balance)
         {
             balance -= amount; 
@@ -62,7 +51,6 @@ public class BankAccount {
         }
         
        
-        //return(this.balance);
     }
     
     public void applyInterest()
@@ -72,9 +60,7 @@ public class BankAccount {
     
     public void checkBalance()            
     {
-        //this.customer = customer;
-        //this.balance = balance;
-        System.out.println(customerName + ", Balance " + balance);
+        System.out.println(customerName + ", Balance $" + balance);
     }
         
 }

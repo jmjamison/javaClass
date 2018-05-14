@@ -19,7 +19,7 @@ public class SimpleBoatApp {
         
         simpleBoat.whereIsTheSail();
         
-        simpleBoat.goFast();
+        simpleBoat.goFast();  
         
         simpleBoat.whereIsTheSail();
         

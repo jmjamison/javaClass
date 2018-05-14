@@ -28,7 +28,7 @@ public class Boat {
     {
         // code here
         sail = true;
-        speed = speed + 10;
+        speed =speed + 10;
         
         // boat speed should not exceed 100
         if (speed > 100)
@@ -44,6 +44,13 @@ public class Boat {
         // code here
         sail = false;
         speed = speed - 5;
+        
+        // boat speed cannont go below 0
+        if (speed < 1)
+        {
+           speed = 1;
+        }
+        
         System.out.println(name + " is lowering the sail at the speed of " + Math.round(speed) + " mph.\n");
     }   
 

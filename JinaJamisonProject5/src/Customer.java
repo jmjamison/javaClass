@@ -26,15 +26,12 @@ public class Customer {
         this.lname = lname;
         
         testSSN(ssNumber);
-        //this.ssNumber = ssNumber;
     }
     
     public void testSSN(String ssNumber) 
     {
         this.ssNumber = ssNumber;
-        //this.ssNumber = ssNumber;  [0-9]{3}-[0-9]{2}-[0-9]{4}
-        //Pattern ssnPattern = Pattern.compile("/^[0-9]{3}-[0-9]{2}-[0-9]{4}$/");
-        //Matcher matcher = ssnPattern.matcher(ssNumber);
+        // pattern - [0-9]{3}-[0-9]{2}-[0-9]{4}
         final String regex = "^[0-9]{3}-[0-9]{2}-[0-9]{4}$";
         final String string = ssNumber;
 
@@ -48,7 +45,7 @@ public class Customer {
         else
         {
             this.ssNumber = "Invalid_SSN";
-            System.out.println("Successfully created account for " + fname + " " + lname + " . Invalid SSN!");
+            System.out.println("Successfully created account for " + fname + " " + lname + ". Invalid SSN!");
 
             
         }
