@@ -54,7 +54,7 @@ public class BankDatabase {
     {
        for (int i = 0; i < currentSize; i++) 
        {
-           System.out.println(accountList[i]);
+         // super.printInfo();
        }
     }
     

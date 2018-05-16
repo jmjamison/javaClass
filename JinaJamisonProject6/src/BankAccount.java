@@ -14,6 +14,7 @@ abstract class BankAccount {
     private long accountNumber;
     protected float balance;
     private float amount;
+    private String ssNumber;
         
         
     
@@ -25,10 +26,15 @@ abstract class BankAccount {
         accountNumber = (long)(Math.random() * 9e9 + 1e9);
         balance = amount;
         System.out.println("Successfully created account for " + fname + " " + lname + " Account Number " + accountNumber);
-        //checkBalance();
+        printInfo();
         
     }
     
+     public void printInfo()
+    {
+        System.out.println(customerName + ", " + ssNumber + " " + amount);
+    }
+     
     public void deposit(float amount)
     {
         balance += amount; 
