@@ -11,6 +11,8 @@
 public class BankApp {
     
     public static void main(String[] args) {
+        
+        // array list
         BankDatabase acctDatabase = new BankDatabase();
         
         acctDatabase.createCheckingAccount("Alin Parker", "123-45-6789", 20000.0f);
