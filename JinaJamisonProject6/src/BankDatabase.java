@@ -20,6 +20,7 @@ public class BankDatabase {
     void createCheckingAccount(String customerName, String ssn, float deposit)
     {
         //
+        customer = new Customer(fname, lname, ssNumber );
     }
     
     void createSavingsAccount(String customerName, String ssn, float deposit)
