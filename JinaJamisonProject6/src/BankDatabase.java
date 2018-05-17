@@ -17,10 +17,16 @@ public class BankDatabase {
     //private CheckingAccount accountList[];
     private BankAccount accountList[];
     private int currentSize;
+    private long accountNumber;
+    
     
     BankDatabase()
     {
         this.accountList = new BankAccount[100];
+        this.customerName = customerName;
+        this.amount = amount;
+        this.ssNumber = ssNumber;
+        this.accountNumber = accountNumber;
         int currentSize = 0;
         System.out.println("array length: " + accountList.length);
        //
@@ -52,15 +58,19 @@ public class BankDatabase {
     
     void print()
     {
-       for (int i = 0; i < currentSize; i++) 
+        
+        for (int i = 0; i < currentSize; i++) 
        {
-         // super.printInfo();
+         System.out.println(accountList[i].customerName + ", accn#: " + accountList[i].accountNumber + ", Balance $" + accountList[i].balance);
        }
     }
     
     void applyInterest()
     {
-        //
+        for (int i = 0; i < currentSize; i++) 
+       {
+         accountList[i].applyInterest();
+       }
     }
     
     
