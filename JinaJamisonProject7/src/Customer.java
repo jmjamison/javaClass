@@ -24,11 +24,21 @@ public class Customer {
     {
         this.fname = fname;
         this.lname = lname;
+        this.ssNumber = ssNumber;
         
-        testSSN(ssNumber);
+        //checkSSN(ssNumber);
+        try
+        {
+            checkSSN(ssNumber);
+        }
+        catch(InvalidCustomerException e)
+        {
+                //
+            System.out.println("Exception: " + e.getMessage());
+        }
     }
     
-    public void testSSN(String ssNumber) 
+    public void checkSSN(String ssNumber) 
     {
         this.ssNumber = ssNumber;
         // pattern - [0-9]{3}-[0-9]{2}-[0-9]{4}
@@ -44,8 +54,10 @@ public class Customer {
         }
         else
         {
-            this.ssNumber = "Invalid_SSN";
-            System.out.println("Successfully created account for " + fname + " " + lname + ". Invalid SSN!");
+            //this.ssNumber = "Invalid_SSN";
+            //System.out.println("Successfully created account for " + fname + " " + lname + ". Invalid SSN!");
+            InvalidCustomerException f = new InvalidCustomerException(ssNumber);
+            throw f;
 
             
         }
