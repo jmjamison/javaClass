@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 import java.util.*;
+import static java.util.Arrays.sort;
 /**
  *
  * @author jamie
@@ -11,10 +12,9 @@ import java.util.*;
 public class BankDatabase {
     // constructor
     private String customerName;
-    private float balance;  
     private String ssNumber;
     private float amount;
-    //private CheckingAccount accountList[];
+    private float balance;  
     private BankAccount accountList[];
     private int currentSize;
     private long accountNumber;
@@ -25,10 +25,11 @@ public class BankDatabase {
         this.accountList = new BankAccount[100];
         this.customerName = customerName;
         this.amount = amount;
+        this.balance = balance;
         this.ssNumber = ssNumber;
         this.accountNumber = accountNumber;
         int currentSize = 0;
-        System.out.println("array length: " + accountList.length);
+        //System.out.println("array length: " + accountList.length);
        //
     }
     
@@ -56,11 +57,14 @@ public class BankDatabase {
         currentSize ++;
     }
     
+   
     void print()
     {
+        Arrays.sort(accountList);
         
         for (int i = 0; i < currentSize; i++) 
        {
+         //System.out.println(accountList[i].balance);
          System.out.println(accountList[i].customerName + ", accn#: " + accountList[i].accountNumber + ", Balance $" + accountList[i].balance);
        }
     }
@@ -69,7 +73,8 @@ public class BankDatabase {
     {
         for (int i = 0; i < currentSize; i++) 
        {
-         accountList[i].applyInterest();
+           System.out.println(accountList[i].balance);
+           accountList[i].applyInterest();
        }
     }
     
