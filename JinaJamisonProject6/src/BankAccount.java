@@ -8,7 +8,7 @@
  *
  * @author jmjamison
  */
-abstract class BankAccount implements Comparable<BankAccount>{
+abstract class BankAccount implements Comparable<BankAccount> {
     /**  protected private fields   */
     private Customer customer;
     String customerName;
@@ -39,22 +39,28 @@ abstract class BankAccount implements Comparable<BankAccount>{
     
    // implement interface  accountList[i].balance
     
-   public interface Comparable<BankAccount>
-   {
-       int compareTo(BankAccount other);
-   }
-   public float getBalance()
-    {
-        this.balance = balance;
-        return 0;
-    }
+  
     @Override
-    public int compareTo(BankAccount other)
+    public int compareTo(BankAccount o)
     {
-         
-        if (balance < other.getBalance()) { return -1; }
-        if (balance > other.getBalance()) { return 1; }
-        return 0;
+        // sort based on balance
+        //if (balance < other) { return -1; }
+        //if (balance > other) { return 1; }
+        //return 0;
+        if (o == null)
+        {
+            return 0;
+        }
+        
+        if (o instanceof BankAccount)  // checking or savings account return true
+        {
+            BankAccount other = (BankAccount) o;  
+            if (balance < other.balance) { return -1; }
+            if (balance > other.balance) { return 1; }
+        }
+        
+            return 0;
+        
         
     }
   
