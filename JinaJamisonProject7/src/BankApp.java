@@ -17,7 +17,7 @@ public class BankApp {
         
         acctDatabase.createCheckingAccount("Alin Parker", "123-45-6789", 20000.0f);
         acctDatabase.createSavingsAccount("Mary Jones", "987-65-4321", 15000.0f);
-        acctDatabase.createSavingsAccount("John Smith", "123-45-6789", 12000.0f);
+        acctDatabase.createSavingsAccount("John Smith", "1239-45-6789", 12000.0f);
         
         acctDatabase.print();
         acctDatabase.applyInterest();

@@ -10,20 +10,25 @@
  *  exception when an invalid Social Security Number is passed 
  *      to the Customer constructor
  */
-class InvalidCustomerException extends Exception {
+public class InvalidCustomerException extends Exception {
     // define attributes
-    
+    String ssNumber;
+    String fname;
+    String lname;
     //constructor
    
-    InvalidCustomerException (String s)
+    InvalidCustomerException (String ssNumber, String fname, String lname)
     {
-        super(s);
+        super();
         // this.attributes - 
+        this.ssNumber = ssNumber;
+        this.fname = fname;
+        this.lname = lname;
     }
     
     @Override
     public String getMessage()
     {
-        return "exception message";
+        return "Invalid Social Security Number: " + ssNumber + " for " + fname + " " + lname + ".";
     }
 }
