@@ -29,6 +29,6 @@ public class InvalidCustomerException extends Exception {
     @Override
     public String getMessage()
     {
-        return "Invalid Social Security Number: " + ssNumber + " for " + fname + " " + lname + ".";
+        return "Invalid Social Security Number: " + ssNumber + " entered for " + fname + " " + lname + ".";
     }
 }
