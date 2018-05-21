@@ -26,21 +26,25 @@ public class Customer {
         this.lname = lname;
         this.ssNumber = ssNumber;
         
-        //checkSSN(ssNumber);
         try
         {
-            checkSSN(ssNumber);
+            //
+            checkSSN(ssNumber, fname, lname);
         }
         catch(InvalidCustomerException e)
         {
-                //
-            System.out.println("Exception: " + e.getMessage());
+            System.out.println(e.getMessage());
         }
+       
+       
     }
     
-    public void checkSSN(String ssNumber) 
+    String checkSSN(String ssNumber, String fname, String lname) throws InvalidCustomerException
     {
         this.ssNumber = ssNumber;
+        this.fname = fname;
+        this.lname = lname;
+        
         // pattern - [0-9]{3}-[0-9]{2}-[0-9]{4}
         final String regex = "^[0-9]{3}-[0-9]{2}-[0-9]{4}$";
         final String string = ssNumber;
@@ -54,15 +58,15 @@ public class Customer {
         }
         else
         {
-            //this.ssNumber = "Invalid_SSN";
+            this.ssNumber = ssNumber;
+            this.fname = fname;
+            this.lname = lname;
             //System.out.println("Successfully created account for " + fname + " " + lname + ". Invalid SSN!");
-            InvalidCustomerException f = new InvalidCustomerException(ssNumber);
-            throw f;
-
-            
+            InvalidCustomerException e = new InvalidCustomerException(ssNumber, fname, lname);
+            throw e;
         }
+        return ssNumber;
     }
 
-    
     
 }
