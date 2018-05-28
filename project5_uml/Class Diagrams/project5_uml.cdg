@@ -2,7 +2,7 @@
 
 <ClassDiagram name="project5_uml">
   <ClassDiagramComponents>
-    <Class name="BankAccount" package="" visibility="private" xPosition="389.0" yPosition="38.0">
+    <Class name="BankAccount" package="" visibility="private" xPosition="466.0" yPosition="54.0">
       <Fields>
         <Field name="customer" type="Object" visibility="private"/>
         <Field name="AccountNumber" type="Object" visibility="private"/>
@@ -17,7 +17,7 @@
         <Method name="checkBlanace" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Customer" package="" visibility="private" xPosition="167.0" yPosition="38.0">
+    <Class name="Customer" package="" visibility="private" xPosition="98.0" yPosition="54.0">
       <Fields>
         <Field name="fname" type="Object" visibility="private"/>
         <Field name="lname" type="Object" visibility="private"/>
@@ -34,7 +34,7 @@
       <Constructors/>
       <Methods/>
     </Class>
-    <Class name="SavingsAccount" package="" visibility="public" xPosition="522.0" yPosition="352.0">
+    <Class name="SavingsAccount" package="" visibility="public" xPosition="738.0" yPosition="352.0">
       <Fields>
         <Field name="interest" type="Object" visibility="private"/>
       </Fields>
@@ -42,5 +42,9 @@
       <Methods/>
     </Class>
   </ClassDiagramComponents>
-  <ClassDiagramRelations/>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="CheckingAccount" target="BankAccount"/>
+    <HasRelation name="customer" source="Customer" target="BankAccount" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="SavingsAccount" target="BankAccount"/>
+  </ClassDiagramRelations>
 </ClassDiagram>
