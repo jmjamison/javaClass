@@ -1,0 +1,16 @@
+java -jar "D:\javaClass\JinaJamisonProject6\dist\JinaJamisonProject6.jar
+
+
+D:\javaClass\JinaJamisonProject6\src>java -jar "D:\javaClass\JinaJamisonProject6
+\dist\JinaJamisonProject6.jar
+Exception in thread "main" java.lang.NullPointerException
+        at java.util.regex.Matcher.getTextLength(Unknown Source)
+        at java.util.regex.Matcher.reset(Unknown Source)
+        at java.util.regex.Matcher.<init>(Unknown Source)
+        at java.util.regex.Pattern.matcher(Unknown Source)
+        at Customer.testSSN(Customer.java:39)
+        at Customer.<init>(Customer.java:28)
+        at BankAccount.<init>(BankAccount.java:22)
+        at CheckingAccount.<init>(CheckingAccount.java:28)
+        at BankDatabase.createCheckingAccount(BankDatabase.java:32)
+        at BankApp.main(BankApp.java:18)
