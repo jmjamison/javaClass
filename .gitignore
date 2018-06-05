@@ -1,6 +1,7 @@
 .gitignore
 /week*
 *.zip
+*.pdf
 /JinaJamisonProject1x
 /JinaJamisonProject2x
 /JinaJamisonProject2/dist/
