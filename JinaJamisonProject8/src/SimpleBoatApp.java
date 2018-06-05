@@ -1,3 +1,6 @@
+
+import java.io.IOException;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,8 +12,10 @@
  * @author jmjamison
  */
 public class SimpleBoatApp {
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
+        boatList.readBoatList();
+        
         Boat simpleBoat = new Boat("Destiny");
         
         simpleBoat.goFast();
