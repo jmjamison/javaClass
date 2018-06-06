@@ -19,7 +19,8 @@ public class boatList {
      */
     public static void readBoatList() throws IOException
     {
-        try (BufferedReader br = new BufferedReader(new FileReader("/media/jamie/7EDC14F5DC14A983/javaClass/JinaJamisonProject8/boatNames.txt"))) 
+        final String workingDir = System.getProperty("user.dir");
+        try (BufferedReader br = new BufferedReader(new FileReader(workingDir + "/" + "boatNames.txt"))) 
         {
         
             String line;
@@ -34,11 +35,13 @@ public class boatList {
                 // int[] myIntArray = new int[3];
                 // String[] anArrayOfStrings;
                 boatNames[counter] = line;
-                System.out.println("line number: " + counter);
+                // debugging code
+                //System.out.println("line number: " + counter);
                 counter  += 1;
             }
             
-            System.out.println("total boat names: " + counter);
+            // debugging code
+            //System.out.println("total boat names: " + counter);
             
             for (int i=0; i < counter; i++)
             {
