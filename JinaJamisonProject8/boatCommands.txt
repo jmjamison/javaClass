@@ -1,0 +1,6 @@
+power on
+power of
+speed up
+slow down
+turn left
+turn right

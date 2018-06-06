@@ -16,7 +16,11 @@ import java.util.Scanner;
 public class SimpleBoatApp {
     public static void main(String[] args)  throws IOException
     {
-        //boatList.readBoatList();
+        // read in the boat list text file to array
+        boatList boatlist = new boatList();
+        boatlist.createBoatList();
+        boatlist.listBoats();
+        boatCommand boatCommands = new boatCommand();
         
         // prompt user to enter boat names and command, separated by comma
         System.out.println("Enter boat name and command (boat, commant) or quit:");
@@ -45,10 +49,19 @@ public class SimpleBoatApp {
             String boatName = tokens[0].trim();
             String boatCommand = tokens[1].trim();
             
-            Boat boat2 = new Boat(boatName, boatCommand);
-            // check boat name
-            boat2.checkBoatName(boatName);
+           // check boat name
+            if (!boatlist.checkBoatName(boatName))
+            {
+                System.out.println(boatName + " is not on the list, check documentation and try again.");
+            }
             
+            // check boat command
+            if (!boatCommands.checkBoatCommand(boatCommand))
+            {
+                System.out.println(boatCommand + " is not a valid command, check documentation and try again.");
+            }
+            
+            Boat boat2 = new Boat(boatName, boatCommand);
         
         }
         
