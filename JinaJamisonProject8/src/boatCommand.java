@@ -34,7 +34,7 @@ public class boatCommand {
         List<String> list = Arrays.asList(boatCommandList);
         
         if(list.contains(boatCommand)){
-            System.out.println(boatCommand + " is a valid boat name.");
+            //System.out.println(boatCommand + " is a valid boat name.");
             success = true;
         }
         else

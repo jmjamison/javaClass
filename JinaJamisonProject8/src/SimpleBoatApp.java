@@ -18,8 +18,12 @@ public class SimpleBoatApp {
     {
         // read in the boat list text file to array
         boatList boatlist = new boatList();
+        // create the boat list array from boatList.txt file, use to check valid names
         boatlist.createBoatList();
-        boatlist.listBoats();
+        // print out an informational list of available boat names
+        // optional thing
+        // boatlist.listBoats();
+        // create the boat command arry, used to check valid commands
         boatCommand boatCommands = new boatCommand();
         
         // prompt user to enter boat names and command, separated by comma
@@ -53,12 +57,14 @@ public class SimpleBoatApp {
             if (!boatlist.checkBoatName(boatName))
             {
                 System.out.println(boatName + " is not on the list, check documentation and try again.");
+                continue;
             }
             
             // check boat command
             if (!boatCommands.checkBoatCommand(boatCommand))
             {
                 System.out.println(boatCommand + " is not a valid command, check documentation and try again.");
+                continue;
             }
             
             Boat boat2 = new Boat(boatName, boatCommand);

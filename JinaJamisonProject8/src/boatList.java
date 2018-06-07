@@ -49,20 +49,37 @@ public class boatList {
                 counter  += 1;
             }
             
-            System.out.println("total boat names: " + counter);
+            //System.out.println("total boat names: " + counter);
             
             
         }
         
     }
-    void listBoats()
+    void listBoats() throws IOException
     {
-        int counter = 0;
-            
-        for (int i=0; i < counter; i++)
+        System.out.println("List of Available Boats\n");
+        workingDirectory = System.getProperty("user.dir") + "/";
+        //System.out.println("working directory: " + workingDirectory);
+        
+        try (BufferedReader br = new BufferedReader(new FileReader(workingDirectory + "boatNames.txt"))) 
         {
-            System.out.println(boatNames[i]);
+            
+            //String line;
+            //String[] boatNames = new String[100];
+            int counter = 0;
+            
+            while ((line = br.readLine()) != null) 
+            {
+                // String[] anArrayOfStrings;
+                System.out.println(line);
+                counter  += 1;
+            }
+            
+            //System.out.println("total boat names: " + counter);
+            
+            
         }
+        
     }
     
     boolean checkBoatName(String name)
@@ -75,12 +92,12 @@ public class boatList {
         List<String> list = Arrays.asList(boatNames);
         
         if(list.contains(boatName)){
-            System.out.println(boatName + " is a valid boat name.");
+            // System.out.println(boatName + " is a valid boat name.");
             success = true;
         }
         else
         {
-            System.out.println(boatName + " is not a valid boat name");
+            System.out.println(boatName + " is not a valid boat name, try again.");
             success = false;
         }
         

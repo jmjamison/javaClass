@@ -14,8 +14,9 @@ public class Boat {
     private String boatName;
     private String boatCommand;
     private Boolean  sail;
-    private float speed;
+    private int speed;
     private int degrees;
+    private int minimumSpeed = 2;
     
      /** constructor, initializes the object kind of like c++?  */
     Boat(String name, String command)
@@ -26,7 +27,8 @@ public class Boat {
         degrees = 0;
         sail = true;
         
-        System.out.println(boatName + ", " + boatCommand);
+        // Sea Monkey, power in
+        //System.out.println(boatName + ", " + boatCommand);
         
         if (boatCommand.equals("power on"))
         {
@@ -37,18 +39,39 @@ public class Boat {
             System.out.println(boatName + " is powered off.");
         }
         else if (boatCommand.equals("slow down"))
+         //  decress boat speed by 2 mph to the minimum of 2mph
         {
-            System.out.println(boatName + " is powered off.");
+            degrees = 5;
+            
+            if ((speed - 2)  > minimumSpeed)
+            {   
+                speed = speed - 2;
+
+            }
+            else
+            {
+                speed = minimumSpeed;
+            }
+            
+            System.out.println(boatName + " is moving in a " + degrees + " degree angle at the speed of " + speed + " mph.");
+        }
+        else if (boatCommand.equals("speed up"))
+         //  decress boat speed by 2 mph to the minimum of 2mph
+        {
+            degrees = 5;
+            speed = speed + minimumSpeed;
+            
+            System.out.println(boatName + " is moving in a " + degrees + " degree angle at the speed of " + speed + " mph.");
         }
         else if (boatCommand.equals("turn left"))
         {
-            degrees = degrees + 10;
-            speed = speed + 10;
-            System.out.println(boatName + " is powered off.");
+            degrees = 5;
+            System.out.println(boatName + " is moving in a " + degrees + " degree angle.");
         }
         else if (boatCommand.equals("turn right"))
         {
-            System.out.println(boatName + " is powered off.");
+            degrees = 5;
+            System.out.println(boatName + " is moving in a " + degrees + " degree angle.");
         }
     }
     
