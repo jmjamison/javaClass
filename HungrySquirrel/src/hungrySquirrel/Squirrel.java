@@ -30,7 +30,7 @@ public class Squirrel extends Entity {
     
     public void move(char direction)
     {
-        //u
+        //
     }
     
 }
