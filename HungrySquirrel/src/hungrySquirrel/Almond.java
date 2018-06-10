@@ -12,10 +12,13 @@ package hungrySquirrel;
 public class Almond  extends Nut {
     
     //
+    String symbol;
+    int row;
+    int col;
+    
     int totalNuts;
     int nutritionPoints;
     String name;
-    String symbol;
     
     Almond()
     {
@@ -29,9 +32,13 @@ public class Almond  extends Nut {
         symbol = "A";
     }
     
+    @Override
     public void create ()
     {
         // generate nut
+        name = "Almond";
+        nutritionPoints = 5;
+        symbol = "A";
         
         
     }

@@ -12,10 +12,13 @@ package hungrySquirrel;
 public class PoisonousCashew extends Nut {
     
     //
+    String symbol;
+    int row;
+    int col;
+    
     int totalNuts;
     int nutritionPoints;
     String name;
-    String symbol;
     
     PoisonousCashew()
     {
@@ -29,9 +32,13 @@ public class PoisonousCashew extends Nut {
         symbol = "C";
     }
     
+    @Override
     public void create ()
     {
         // generate nut
+        name = "PoisonousCashew";
+        nutritionPoints = -15;
+        symbol = "C";
         
         
     }

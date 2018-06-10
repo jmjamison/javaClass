@@ -19,6 +19,9 @@ public class Squirrel extends Entity {
     // When Squirrel moves over a nut, it eats the nut and collects or loses points
     
     // implements movable
+    String symbol;
+    int row;
+    int col;
     
     int pointsCollected;
     int totalNutsEaten;

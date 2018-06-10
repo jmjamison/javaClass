@@ -7,9 +7,9 @@ package hungrySquirrel;
 
 /**
  *
- * @author jmjamison
+ * @author jamie
  */
-public class Wall extends Entity {
+public class freeSpace {
     
     String symbol;
     int row;
@@ -17,19 +17,13 @@ public class Wall extends Entity {
     
     String Wall;
     
-    Wall()
+    freeSpace()
     {
         
         this.symbol = symbol;
         
-         symbol = "*";
-    }
-
-    public void create ()
-    {
-        // generate nut
-        
-        
+        symbol = " ";
+    
     }
     
 }

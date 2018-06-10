@@ -11,10 +11,13 @@ package hungrySquirrel;
  */
 public class Peanut extends Nut {
     
+    String symbol;
+    int row;
+    int col;
+    
     int totalNuts;
     int nutritionPoints;
     String name;
-    String symbol;
     
     Peanut()
     {
@@ -23,14 +26,16 @@ public class Peanut extends Nut {
         this.nutritionPoints = nutritionPoints;
         this.symbol = symbol;
         
-        name = "Peanut";
-        nutritionPoints = 10;
-        symbol = "P";
+        
     }
 
+    @Override
     public void create ()
     {
         // generate nut
+        name = "Peanut";
+        nutritionPoints = 10;
+        symbol = "P";
         
         
     }

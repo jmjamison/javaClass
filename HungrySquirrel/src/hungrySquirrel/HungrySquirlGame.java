@@ -16,8 +16,9 @@ public class HungrySquirlGame
     
     public static void main(String[] args) throws IOException
     {
-        String workingDirectory = System.getProperty("user.dir") + "/";   
-        String filename = workingDirectory + "Maze.txt";
+        //String workingDirectory = System.getProperty("user.dir") + "/";   
+        //String filename = workingDirectory + "Maze.txt";
+        String filename = "Maze.txt";
         //System.out.println(filename);  //ubiquitious debugging code
         // 1) create maze
         // 2) create Squirl
@@ -31,7 +32,7 @@ public class HungrySquirlGame
         Maze newMaze = new Maze();
         try 
         {
-            newMaze.create(filename);
+            newMaze.create("Maze.txt");
             newMaze.display();
             
         }
