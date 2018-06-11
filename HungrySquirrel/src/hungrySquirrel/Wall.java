@@ -11,25 +11,23 @@ package hungrySquirrel;
  */
 public class Wall extends Entity {
     
-    String symbol;
-    int row;
-    int col;
-    
-    String Wall;
-    
     Wall()
     {
+        symbol = "*";
         
-        this.symbol = symbol;
-        
-         symbol = "*";
     }
-
+    
+    @Override
     public void create ()
     {
-        // generate nut
         
+    }
+    
+    @Override
+    public Entity put(int newRow, int newCol)
+    {
         
+        return null;
     }
     
 }

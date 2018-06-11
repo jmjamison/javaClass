@@ -11,14 +11,11 @@ package hungrySquirrel;
  */
 public class Nut extends Entity {
     
-    String symbol;
-    int row;
-    int col;
-    
     int totalNuts;
     int nutritionPoints;
-    int name;
+    String name;
     
+    @Override
     public void create ()
     {
         //

@@ -9,21 +9,23 @@ package hungrySquirrel;
  *
  * @author jamie
  */
-public class freeSpace {
-    
-    String symbol;
-    int row;
-    int col;
-    
-    String Wall;
+public class freeSpace extends Entity {
     
     freeSpace()
     {
-        
-        this.symbol = symbol;
-        
         symbol = " ";
+        
+    }
     
+    @Override
+    public void create ()
+    {
+       
+    }
+    @Override
+    public Entity put(int newRow, int newCol)
+    {
+        return null;
     }
     
 }
