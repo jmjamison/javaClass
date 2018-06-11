@@ -49,8 +49,6 @@ public class HungrySquirrelGame
          Squirrel mySquirrel = new Squirrel();
          mySquirrel.create();
          
-          
-         
         System.out.println("Enter the Squirrel position (row - between, column): ");
         Scanner keyboard = new Scanner(System.in);
          
@@ -83,8 +81,7 @@ public class HungrySquirrelGame
             if (myMaze.available(row,col))
             {
                 System.out.println("Space " + row + ", " + col);
-                //myMaze[row][col] = mySquirrel.symbol;
-                //System.out.print(myMaze[row][col]);
+                mySquirrel.put(row, col);
             }
             else
             {

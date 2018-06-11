@@ -1,0 +1,45 @@
+import java.util.Random;
+
+Random rand = new Random();
+
+int n = rand.nextInt(20);  // 20 max, 1 minimum
+
+
+public static int getRandomDoubleBetweenRange(min, max)
+{
+
+    x = (Math.random()*((max-min)+1))+min;
+
+    return x;
+
+}
+
+
+
+public static int generateRandomInt(int upperRange)
+{
+
+    Random random = new Random();
+
+    return random.nextInt(upperRange);
+
+}
+
+
+public static int generateRandomIntIntRange(int min, int max) 
+{
+
+    Random r = new Random();
+
+    return r.nextInt((max - min) + 1) + min;
+
+}
+
+public static int getRandomNumberInts(int min, int max)
+{
+
+    Random random = new Random();
+
+    return random.ints(min,(max+1)).findFirst().getAsInt();
+
+}

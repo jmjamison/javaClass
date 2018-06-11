@@ -9,6 +9,7 @@ package hungrySquirrel;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Maze {
     public static int Max_Maze_Column = 50;
     public static int Max_Maze_Row = 20;
     //private BankAccount accountList[] = new BankAccount[100];;
-    private static Entity maze[][] = new Entity[Max_Maze_Row][Max_Maze_Column];
+    public static Entity maze[][] = new Entity[Max_Maze_Row][Max_Maze_Column];
     public int row;
     public int col;
     
@@ -60,12 +61,53 @@ public class Maze {
             }
             System.out.println("End of maze creation routines.");
             
-            // insert the nuts into the maze
-            // available, ie empty spaces
-            // no more than 5 nuts
+            // insert the nuts into the maze in available, ie empty spaces
+            // no more than 5 nuts total, set in the nut.class
             // peanuts, almonds, plus 1 poisionous cashew
+            // 50/50 chance for a peanut or almond
+            //System.out.println(Total nuts allowed: ) + Nut.totalNuts;
+            Nut nutsTotal = new Nut();
             
-		
+            for (int nutCount = 1; nutCount < nutsTotal.totalNuts/2; nutCount++)
+            {
+                int nutRow = getRandomNumbers(1, 20);
+                int nutCol = getRandomNumbers(1, 50);
+                
+                if(available(nutRow, nutCol))
+                {
+                    maze[nutRow][nutCol] = new Almond();
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            
+            for (int nutCount = 1; nutCount < nutsTotal.totalNuts/2; nutCount++)
+            {
+                //System.out.println("Random rows and cols: " + getRandomNumbers(1, 20) + ", " + getRandomNumbers(1, 50));
+                int nutRow = getRandomNumbers(1, 20);
+                int nutCol = getRandomNumbers(1, 50);
+                
+                if(available(nutRow, nutCol))
+                {
+                    maze[nutRow][nutCol] = new Peanut();
+                }
+                else
+                {
+                    continue;
+                }
+                
+            }
+            
+            int nutRow = getRandomNumbers(1, 20);
+            int nutCol = getRandomNumbers(1, 50);
+                
+            if(available(nutRow, nutCol))
+            {
+                maze[nutRow][nutCol] = new PoisonousCashew();
+            }
+                    
 	}
        
     }
@@ -108,13 +150,20 @@ public class Maze {
             System.out.println("Don't pick a column 50 or greater!");
             return false;
         }
-        if (maze[row][col] == null) 
+        if (maze[row][col] == null)
         {
             return true;
         }
+        
         return false;
             
     }
-	
+    
+    public static int getRandomNumbers(int min, int max)
+    {
+        Random r = new Random();           
+	return r.nextInt((max - min) + 1) + min;
+    }      
+        
     
 }

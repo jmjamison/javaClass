@@ -11,14 +11,22 @@ package hungrySquirrel;
  */
 public class Nut extends Entity {
     
-    int totalNuts;
-    int nutritionPoints;
-    String name;
+    public int totalNuts = 5;  // per game description
+    public int nutritionPoints;
+    public String name;
+    
+    Nut() {}
     
     @Override
     public void create ()
     {
         //
+    }
+    
+    @Override
+    public Entity put(int newRow, int newCol)
+    {
+        return null;
     }
     
 }

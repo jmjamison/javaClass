@@ -39,9 +39,7 @@ public class Squirrel extends Entity implements Movable {
     @Override
     public Entity put(int newRow, int newCol)
     {
-        
-        
-        System.out.println("row: " + newRow + ", col:" + newCol);
+        Maze.maze[newRow][newCol] = Squirrel.this;
         return null;
     }
     

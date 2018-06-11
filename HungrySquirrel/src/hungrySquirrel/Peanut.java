@@ -25,6 +25,12 @@ public class Peanut extends Nut {
         nutritionPoints = 10;
         
     }
+    @Override
+    public Entity put(int newRow, int newCol)
+    {
+        Maze.maze[newRow][newCol] = Peanut.this;
+        return null;
+    }
     
 }
  

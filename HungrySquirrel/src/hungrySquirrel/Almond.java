@@ -24,6 +24,12 @@ public class Almond  extends Nut {
         
         
     }
+    @Override
+    public Entity put(int newRow, int newCol)
+    {
+        Maze.maze[newRow][newCol] = Almond.this;
+        return null;
+    }
     
     
 }

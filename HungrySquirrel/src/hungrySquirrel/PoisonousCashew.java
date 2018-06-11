@@ -14,7 +14,7 @@ public class PoisonousCashew extends Nut {
     PoisonousCashew()
     {
         
-        symbol = "C";
+        symbol = "%";
     }
     
     //
@@ -27,6 +27,12 @@ public class PoisonousCashew extends Nut {
         nutritionPoints = -15;
         
         
+    }
+    @Override
+    public Entity put(int newRow, int newCol)
+    {
+        Maze.maze[newRow][newCol] = PoisonousCashew.this;
+        return null;
     }
     
 }
