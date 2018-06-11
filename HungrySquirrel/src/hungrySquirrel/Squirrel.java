@@ -5,11 +5,13 @@
  */
 package hungrySquirrel;
 
+import static java.lang.System.out;
+
 /**
  *
  * @author jmjamison
  */
-public class Squirrel extends Entity {
+public class Squirrel extends Entity implements Movable {
     
     // Squirel is represented by @ symbol in the maze
     // Squirrel moves up, down, left and right.
@@ -23,19 +25,23 @@ public class Squirrel extends Entity {
     int pointsCollected;
     int totalNutsEaten;
     
-    Squirrel() 
+    Squirrel () 
     {
         symbol = "@";
     }
     
     public void create()
     {
-        // code to place squirl
+        // code to place squirrel
+        
     }
     
     @Override
     public Entity put(int newRow, int newCol)
     {
+        
+        
+        System.out.println("row: " + newRow + ", col:" + newCol);
         return null;
     }
     

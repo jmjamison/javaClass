@@ -21,6 +21,9 @@ public class Maze {
     public static int Max_Maze_Row = 20;
     //private BankAccount accountList[] = new BankAccount[100];;
     private static Entity maze[][] = new Entity[Max_Maze_Row][Max_Maze_Column];
+    public int row;
+    public int col;
+    
     
     Maze()
     {        
@@ -30,17 +33,13 @@ public class Maze {
        
     public static void create(String filename) throws IOException 
     {
-        // System.out.println(filename); // ubiquitious debugging code
-        String line;
         
-        Wall gameWall = new Wall();
-        System.out.println("wall symbol: " + gameWall.symbol);
-        freeSpace gameFreeSpace = new freeSpace();
-        System.out.println("empty space symbol: " + gameFreeSpace.symbol);
-        //String line;
-        
-        //create the maze 
+       //create the maze 
+       //  instantiate the Wall entity
+       Wall gameWall = new Wall();
        //  read in the Maze.txt file
+       // line is used reading in Maze.txt one line at a time
+       String line;
        try (BufferedReader br = new BufferedReader(new FileReader(filename))) 
        {
             int row = 0;
@@ -68,11 +67,7 @@ public class Maze {
             
 		
 	}
-       catch(IOException e)
-       {
-           System.out.println("Exception in maze.create() " + e);
-       }
-        
+       
     }
     
     public static void display()
@@ -103,6 +98,16 @@ public class Maze {
         // takes row, column and determine if the location is blank
         //  if blank, return true
         //  if not blank false
+        if (row >= 20)
+        {
+            System.out.println("Don't pick a row 20 or greater!");
+            return false;
+        }
+        if (col >= 50)
+        {
+            System.out.println("Don't pick a column 50 or greater!");
+            return false;
+        }
         if (maze[row][col] == null) 
         {
             return true;

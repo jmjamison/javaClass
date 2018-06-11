@@ -8,12 +8,13 @@ package hungrySquirrel;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 /**
  *
  * @author jmjamison
  */
-public class HungrySquirrelGame  
+public class HungrySquirrelGame 
 {
     
     public static void main(String[] args) throws IOException, FileNotFoundException
@@ -39,17 +40,18 @@ public class HungrySquirrelGame
             myMaze.display();
             
             
-            
         }
-         catch(IOException e)
-         {
+        catch(IOException e)
+        {
              System.out.println(e.getMessage()); 
-         }
+        }
         
          Squirrel mySquirrel = new Squirrel();
          mySquirrel.create();
          
-        System.out.println("Enter the Squirrel position (row, column): ");
+          
+         
+        System.out.println("Enter the Squirrel position (row - between, column): ");
         Scanner keyboard = new Scanner(System.in);
          
          while(keyboard.hasNextLine())
@@ -65,29 +67,33 @@ public class HungrySquirrelGame
             // if user enters name, grade then split the line
             String[] tokens = input.split(",");
             
-            if (tokens.length != 2)
+            // check the input to be sure it is only 2 numbers            
+            boolean b = Pattern.matches("[\\d]{1,2},\\s*[\\d]{1,2}", input);
+            if (!b)
             {
                 System.out.println("Invalid format, enter the Squirrel position (row, column): ");
                 continue;
             }
             
-            Integer row = Integer.valueOf(tokens[0]);
-            Integer col = Integer.valueOf(tokens[1]);
+            // input assigned to row, column
+            Integer row = Integer.valueOf(tokens[0].trim());
+            Integer col = Integer.valueOf(tokens[1].trim());
             
+                        
             if (myMaze.available(row,col))
             {
-                // Entity put(int newRow, int newCol)
-                //  Entity put(int newRow, int newCol)
-                mySquirrel.put(row,col) = new Squirrel.create();
+                System.out.println("Space " + row + ", " + col);
+                //myMaze[row][col] = mySquirrel.symbol;
+                //System.out.print(myMaze[row][col]);
             }
             else
             {
+                System.out.println("Space " + row + ", " + col + " is not available, try again.");
                 continue;
             }
              myMaze.display();
+            
         }
-         
-       
         
         keyboard.close();
     }

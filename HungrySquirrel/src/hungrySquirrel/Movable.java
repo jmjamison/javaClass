@@ -6,14 +6,13 @@
 package hungrySquirrel;
 
 /**
- *
+ *  Movable interface declares a single method and is implemented by entities that can move in the maze 
+ *      Note:  used by the Squirrel
  * @author jmjamison
  */
-public class Movable {
+public interface Movable 
+{
     
-    void move(char direction)
-    {
-        //move entities in the maze
-    }
+    void move(char direction);
     
 }
