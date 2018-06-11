@@ -13,8 +13,9 @@ public class Nut extends Entity {
     
     int totalNuts;
     int nutritionPoints;
-    int name;
+    String name;
     
+    @Override
     public void create ()
     {
         //

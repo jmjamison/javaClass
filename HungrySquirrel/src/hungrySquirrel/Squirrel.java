@@ -23,9 +23,20 @@ public class Squirrel extends Entity {
     int pointsCollected;
     int totalNutsEaten;
     
+    Squirrel() 
+    {
+        symbol = "@";
+    }
+    
     public void create()
     {
-        //
+        // code to place squirl
+    }
+    
+    @Override
+    public Entity put(int newRow, int newCol)
+    {
+        return null;
     }
     
     public void move(char direction)

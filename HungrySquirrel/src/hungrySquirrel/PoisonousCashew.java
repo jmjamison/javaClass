@@ -11,27 +11,20 @@ package hungrySquirrel;
  */
 public class PoisonousCashew extends Nut {
     
-    //
-    int totalNuts;
-    int nutritionPoints;
-    String name;
-    String symbol;
-    
     PoisonousCashew()
     {
-        this.name = name;
-        this.totalNuts = totalNuts;
-        this.nutritionPoints = nutritionPoints;
-        this.symbol = symbol;
         
-        name = "PoisonousCashew";
-        nutritionPoints = -15;
         symbol = "C";
     }
     
+    //
+    
+    @Override
     public void create ()
     {
         // generate nut
+        name = "PoisonousCashew";
+        nutritionPoints = -15;
         
         
     }

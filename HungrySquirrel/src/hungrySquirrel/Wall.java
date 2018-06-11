@@ -11,7 +11,23 @@ package hungrySquirrel;
  */
 public class Wall extends Entity {
     
-    // Wall class is inherited from Entity super class.
-    // Wall is stationary and doesn't move in the maze
+    Wall()
+    {
+        symbol = "*";
+        
+    }
+    
+    @Override
+    public void create ()
+    {
+        
+    }
+    
+    @Override
+    public Entity put(int newRow, int newCol)
+    {
+        
+        return null;
+    }
     
 }

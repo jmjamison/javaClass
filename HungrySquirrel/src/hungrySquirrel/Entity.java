@@ -18,13 +18,11 @@ abstract class Entity {
        
     public void create()
     {
-        //
+        
     } 
     
     public Entity put(int newRow, int newCol)
     {
-        this.row = row;
-        this.col = col;
         return null;
     }
     
