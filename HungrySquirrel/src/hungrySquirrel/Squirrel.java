@@ -33,6 +33,8 @@ public class Squirrel extends Entity implements Movable {
     public void create()
     {
         // code to place squirrel
+        this.row = row;
+        this.col = col;
         
     }
     
@@ -40,37 +42,81 @@ public class Squirrel extends Entity implements Movable {
     public Entity put(int newRow, int newCol)
     {
         Maze.maze[newRow][newCol] = Squirrel.this;
+        row = newRow;
+        col = newCol;
+        //System.out.println("Squirrel row and column: " + row + ", " + col);
         return null;
     }
     
     @Override
     public void move(char direction)
     {
+        System.out.println("Squirrel starting at at: " + row + ", " + col);
         switch(direction)
         {
             case 'u':
             case 'U':
-              System.out.println("Squirrel moves up.");  
+              if (Maze.available((row+1), col))
+              {
+                  
+                  Maze.maze[row][col] = null;
+                  row = row +1;
+                  Maze.maze[row][col] = Squirrel.this;
+                  System.out.println("Squirrel at: " + row + ", " + col);
+                  Maze.display();
+              }
+              else
+              {
+                  System.out.println("Squirrel can't move there! Try again.");
+              }
               break;
             case 'd':
             case 'D':
-              System.out.println("Squirrel moves down.");  
+              if (Maze.available((row-1), col))
+              {
+                  Maze.maze[row][col] = null;
+                  row = row - 1;
+                  Maze.maze[row][col] = Squirrel.this;
+                  System.out.println("Squirrel at: " + row + ", " + col);
+                  Maze.display();
+              }
+              else
+              {
+                  System.out.println("Squirrel can't move there! Try again.");
+              }
               break;
             case 'r':
             case 'R':
-              System.out.println("Squirrel moves right.");  
+              if (Maze.available((row), col+1))
+              {
+                  Maze.maze[row][col] = null;
+                  col = col + 1;
+                  Maze.maze[row][col] = Squirrel.this;
+                  System.out.println("Squirrel at: " + row + ", " + col);
+                  Maze.display();
+              }
+              else
+              {
+                  System.out.println("Squirrel can't move there! Try again.");
+              }
               break;
             case 'l':
             case 'L':
-              System.out.println("Squirrel moves left.");  
+              if (Maze.available((row), col-1))
+              {
+                  Maze.maze[row][col] = null;
+                  col = col -1;
+                  Maze.maze[row][col] = Squirrel.this;
+                  System.out.println("Squirrel at: " + row + ", " + col);
+                  Maze.display();
+              }
+              else
+              {
+                  System.out.println("Squirrel can't move there! Try again.");
+              }
               break;
                 
         }
-        
-        
-       
-            
-            
         
     }
     

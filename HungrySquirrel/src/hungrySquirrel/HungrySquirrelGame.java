@@ -53,7 +53,7 @@ public class HungrySquirrelGame
         
         // instantiate the squirrel and create
         Squirrel mySquirrel = new Squirrel();
-         mySquirrel.create();
+        mySquirrel.create();
          
          // instantiate the nut objects
          // insert the nuts into the maze in available, ie empty spaces
@@ -147,11 +147,12 @@ public class HungrySquirrelGame
         }
         myMaze.display(); 
         System.out.println("Enter u, d, l, r to move Up, Down, Left, and Right: ");
+        
         keyboard = new Scanner(System.in);
-         
-         while(keyboard.hasNextLine())
-         {
-             direction =  keyboard.next(".").charAt(0);
+        
+        while(keyboard.hasNextLine())
+        {
+            direction =  keyboard.next(".").charAt(0);
             
             if (Character.toString(direction).matches("[qQ]"))   // if quit, break out of loop
             {
@@ -169,7 +170,10 @@ public class HungrySquirrelGame
                 System.out.println("Invalid direction, try again: u, d, l, r:");
                 continue;
             }
+                        
          }
+        
+        myMaze.display(); 
         
         keyboard.close();
     }
