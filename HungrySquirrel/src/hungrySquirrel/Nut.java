@@ -11,9 +11,9 @@ package hungrySquirrel;
  */
 public class Nut extends Entity {
     
-    public int totalNuts = 5;  // per game description
-    public int nutritionPoints;
-    public String name;
+    public static int totalNuts = 5;  // per game description
+    public static int nutritionPoints;
+    public static String name;
     
     Nut() {}
     

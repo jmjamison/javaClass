@@ -22,8 +22,8 @@ public class Squirrel extends Entity implements Movable {
     
     // implements movable
     
-    int pointsCollected;
-    int totalNutsEaten;
+    public static int pointsCollected;
+    public static int totalNutsEaten;
     
     Squirrel () 
     {
@@ -43,9 +43,35 @@ public class Squirrel extends Entity implements Movable {
         return null;
     }
     
+    @Override
     public void move(char direction)
     {
-        //
+        switch(direction)
+        {
+            case 'u':
+            case 'U':
+              System.out.println("Squirrel moves up.");  
+              break;
+            case 'd':
+            case 'D':
+              System.out.println("Squirrel moves down.");  
+              break;
+            case 'r':
+            case 'R':
+              System.out.println("Squirrel moves right.");  
+              break;
+            case 'l':
+            case 'L':
+              System.out.println("Squirrel moves left.");  
+              break;
+                
+        }
+        
+        
+       
+            
+            
+        
     }
     
 }

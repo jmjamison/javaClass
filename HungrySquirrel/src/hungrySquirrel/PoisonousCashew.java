@@ -14,7 +14,7 @@ public class PoisonousCashew extends Nut {
     PoisonousCashew()
     {
         
-        symbol = "%";
+        symbol = "C";
     }
     
     //
