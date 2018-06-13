@@ -12,9 +12,9 @@ package hungrySquirrel;
  */
 abstract class Entity {
     
-    String symbol;
-    int row;
-    int col;
+    public String symbol;
+    public int row;
+    public int col;
        
     public void create()
     {

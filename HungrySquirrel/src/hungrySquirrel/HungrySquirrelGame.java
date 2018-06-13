@@ -7,6 +7,7 @@ package hungrySquirrel;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -21,7 +22,7 @@ public class HungrySquirrelGame
     public static Random r = new Random();       // generate random integers - for inserting nuts and squirrel
     public static char direction;  // direction squirrel moves: u,d,l,r
     
-    public static void main(String[] args) throws IOException, FileNotFoundException
+    public static void main(String[] args) throws IOException, FileNotFoundException, InputMismatchException
     {
         
 //String workingDirectory = System.getProperty("user.dir") + "/";   
@@ -100,7 +101,6 @@ public class HungrySquirrelGame
                 }
             }
          
-         
         // prompt the user for squirrel's initial position
         System.out.println("Enter the Squirrel position (row, column): ");
         Scanner keyboard = new Scanner(System.in);
@@ -146,6 +146,8 @@ public class HungrySquirrelGame
             
         }
         myMaze.display(); 
+        
+        //  squirrel moves
         System.out.println("Enter u, d, l, r to move Up, Down, Left, and Right: ");
         
         keyboard = new Scanner(System.in);

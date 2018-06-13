@@ -13,14 +13,15 @@ public class Almond  extends Nut {
     
     Almond()
     {
+        //
         symbol = "A";
+        name = "Almond";
+        nutritionPoints = 5;
     }
     @Override
     public void create ()
     {
         // generate nut
-        name = "Almond";
-        nutritionPoints = 5;
         
         
     }

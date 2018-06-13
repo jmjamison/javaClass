@@ -15,6 +15,8 @@ public class PoisonousCashew extends Nut {
     {
         
         symbol = "C";
+        name = "PoisonousCashew";
+        nutritionPoints = -15;
     }
     
     //
@@ -23,8 +25,6 @@ public class PoisonousCashew extends Nut {
     public void create ()
     {
         // generate nut
-        name = "PoisonousCashew";
-        nutritionPoints = -15;
         
         
     }

@@ -91,6 +91,7 @@ public class Maze {
         // takes row, column and determine if the location is blank
         //  if blank, return true
         //  if not blank false
+        // NOTE:  also check for presence of almond, peanut or cashew
         if (row >= 20)
         {
             return false;
@@ -99,11 +100,10 @@ public class Maze {
         {
             return false;
         }
-        if ((maze[row][col] == null))
+        if ((maze[row][col] == null) || (maze[row][col].symbol=="A") || (maze[row][col].symbol=="P") || (maze[row][col].symbol=="C"))
         {
             return true;
         }
-        
         return false;
             
     }

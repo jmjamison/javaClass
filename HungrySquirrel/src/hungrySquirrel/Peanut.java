@@ -14,6 +14,8 @@ public class Peanut extends Nut {
     Peanut()
     {
         symbol = "P";
+        name = "Peanut";
+        nutritionPoints = 10;
         
     }
     
@@ -21,8 +23,6 @@ public class Peanut extends Nut {
     public void create ()
     {
         // generate nut
-        name = "Peanut";
-        nutritionPoints = 10;
         
     }
     @Override

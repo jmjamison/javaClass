@@ -30,11 +30,10 @@ public class Squirrel extends Entity implements Movable {
         symbol = "@";
     }
     
+    @Override
     public void create()
     {
-        // code to place squirrel
-        this.row = row;
-        this.col = col;
+        // 
         
     }
     
@@ -56,68 +55,86 @@ public class Squirrel extends Entity implements Movable {
         {
             case 'u':
             case 'U':
-              if (Maze.available((row+1), col))
+              if (Maze.available((row-1), col)) 
               {
-                  
+                  if(Maze.maze[row-1][col] != null)
+                  {
+                      getPoints((Nut)Maze.maze[row-1][col]);
+                  }
                   Maze.maze[row][col] = null;
-                  row = row +1;
+                  row = row - 1;
                   Maze.maze[row][col] = Squirrel.this;
-                  System.out.println("Squirrel at: " + row + ", " + col);
                   Maze.display();
               }
               else
               {
-                  System.out.println("Squirrel can't move there! Try again.");
+                  System.out.println("Squirrel can't jump the wall! Try again.");
               }
               break;
             case 'd':
             case 'D':
-              if (Maze.available((row-1), col))
+              if (Maze.available((row+1), col))
               {
+                  if(Maze.maze[row+1][col] != null)
+                  {
+                      getPoints((Nut)Maze.maze[row+1][col]);
+                  }
                   Maze.maze[row][col] = null;
-                  row = row - 1;
+                  row = row + 1;
                   Maze.maze[row][col] = Squirrel.this;
-                  System.out.println("Squirrel at: " + row + ", " + col);
                   Maze.display();
               }
               else
               {
-                  System.out.println("Squirrel can't move there! Try again.");
+                  System.out.println("Squirrel can't jump the wall! Try again.");
               }
               break;
             case 'r':
             case 'R':
               if (Maze.available((row), col+1))
               {
+                  if(Maze.maze[row][col+1] != null)
+                  {
+                      getPoints((Nut)Maze.maze[row][col+1]);
+                  }
                   Maze.maze[row][col] = null;
                   col = col + 1;
                   Maze.maze[row][col] = Squirrel.this;
-                  System.out.println("Squirrel at: " + row + ", " + col);
                   Maze.display();
               }
               else
               {
-                  System.out.println("Squirrel can't move there! Try again.");
+                  System.out.println("Squirrel can't jump the wall! Try again.");
               }
               break;
             case 'l':
             case 'L':
               if (Maze.available((row), col-1))
               {
+                  if(Maze.maze[row][col-1] != null)
+                  {
+                      getPoints((Nut)Maze.maze[row][col-1]);
+                  }
                   Maze.maze[row][col] = null;
                   col = col -1;
                   Maze.maze[row][col] = Squirrel.this;
-                  System.out.println("Squirrel at: " + row + ", " + col);
                   Maze.display();
               }
               else
               {
-                  System.out.println("Squirrel can't move there! Try again.");
+                  System.out.println("Squirrel can't jump the wall! Try again.");
               }
               break;
                 
         }
         
+        
+    }
+    public void getPoints(Nut e)
+    {
+        pointsCollected = pointsCollected + e.nutritionPoints;
+        totalNutsEaten++;
+        System.out.println("!!!Squirrrel ate  " + e.name + " and gained " + e.nutritionPoints + " nutrition points. (Total " + pointsCollected + ") !!!");
     }
     
 }
