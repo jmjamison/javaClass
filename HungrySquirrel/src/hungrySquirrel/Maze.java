@@ -99,7 +99,7 @@ public class Maze {
         {
             return false;
         }
-        if (maze[row][col] == null)
+        if ((maze[row][col] == null))
         {
             return true;
         }
