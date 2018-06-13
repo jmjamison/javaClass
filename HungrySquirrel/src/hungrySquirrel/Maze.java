@@ -92,11 +92,11 @@ public class Maze {
         //  if blank, return true
         //  if not blank false
         // NOTE:  also check for presence of almond, peanut or cashew
-        if (row >= 20)
+        if (row >= Max_Maze_Row)
         {
             return false;
         }
-        if (col >= 50)
+        if (col >= Max_Maze_Column)
         {
             return false;
         }

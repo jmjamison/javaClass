@@ -43,16 +43,15 @@ public class Squirrel extends Entity implements Movable {
         Maze.maze[newRow][newCol] = Squirrel.this;
         row = newRow;
         col = newCol;
-        //System.out.println("Squirrel row and column: " + row + ", " + col);
         return null;
     }
     
     @Override
     public void move(char direction)
     {
-        System.out.println("Squirrel starting at at: " + row + ", " + col);
         switch(direction)
         {
+            // NOTE: THIS SHOULD BE A MACRO!!!! FIX AFTER CLASS IF NECESSARY!!!
             case 'u':
             case 'U':
               if (Maze.available((row-1), col)) 
@@ -134,7 +133,24 @@ public class Squirrel extends Entity implements Movable {
     {
         pointsCollected = pointsCollected + e.nutritionPoints;
         totalNutsEaten++;
-        System.out.println("!!!Squirrrel ate  " + e.name + " and gained " + e.nutritionPoints + " nutrition points. (Total " + pointsCollected + ") !!!");
+        
+        if (totalNutsEaten == Nut.totalNuts)
+        {
+            System.out.println("!!!Squirrrel ate  " + e.name + " and gained " + e.nutritionPoints + " nutrition points. (Total " + pointsCollected + ") !!!");
+            System.out.println("Squirrel successfully collected all the nuts. Total points " + pointsCollected + "\nThank you for playing this game");
+            System.exit(0);
+        }
+        else if (e.nutritionPoints  < 0)
+        {
+            System.out.println("!!!Squirrrel ate  " + e.name + " and gained " + e.nutritionPoints + " nutrition points. (Total " + pointsCollected + ") !!!");
+            System.out.println("Squirrel ate too many Poisonous Cashews. Nutrition Points = " + e.nutritionPoints + " Game over.");
+            System.exit(0);
+        }
+        else 
+        {
+            System.out.println("!!!Squirrrel ate  " + e.name + " and gained " + e.nutritionPoints + " nutrition points. (Total " + pointsCollected + ") !!!");
+        }
+        
     }
     
 }

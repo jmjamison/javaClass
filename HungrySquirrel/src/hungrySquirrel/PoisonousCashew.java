@@ -17,6 +17,9 @@ public class PoisonousCashew extends Nut {
         symbol = "C";
         name = "PoisonousCashew";
         nutritionPoints = -15;
+        // if I'm adding Poisonous Cashews I will need to add them to the total.
+        Nut.totalNuts =+ 5;
+        
     }
     
     //

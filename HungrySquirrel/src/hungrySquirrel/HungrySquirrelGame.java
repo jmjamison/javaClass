@@ -133,7 +133,7 @@ public class HungrySquirrelGame
                         
             if (myMaze.available(row,col))
             {
-                System.out.println("Space " + row + ", " + col);
+                System.out.println("User input accepted.");;
                 mySquirrel.put(row, col);
                 break;
             }
@@ -148,7 +148,7 @@ public class HungrySquirrelGame
         myMaze.display(); 
         
         //  squirrel moves
-        System.out.println("Enter u, d, l, r to move Up, Down, Left, and Right: ");
+        System.out.println("Enter u, d, l, r to move Up, Down, Left, and Right or q to Quit game: ");
         
         keyboard = new Scanner(System.in);
         
